@@ -16,6 +16,7 @@
 		797BAA6925ED3A8A00283252 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 797BAA6825ED3A8A00283252 /* main.m */; };
 		797BAA7325ED3A8A00283252 /* drawing_p3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 797BAA7225ED3A8A00283252 /* drawing_p3Tests.m */; };
 		797BAA7E25ED3A8A00283252 /* drawing_p3UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 797BAA7D25ED3A8A00283252 /* drawing_p3UITests.m */; };
+		797BAA9325EDDDD700283252 /* AlienDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 797BAA9225EDDDD700283252 /* AlienDraw.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		797BAA7925ED3A8A00283252 /* drawing_p3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = drawing_p3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		797BAA7D25ED3A8A00283252 /* drawing_p3UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drawing_p3UITests.m; sourceTree = "<group>"; };
 		797BAA7F25ED3A8A00283252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		797BAA9125EDDDD700283252 /* AlienDraw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlienDraw.h; sourceTree = "<group>"; };
+		797BAA9225EDDDD700283252 /* AlienDraw.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlienDraw.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				797BAA5C25ED3A8800283252 /* ViewController.h */,
 				797BAA5D25ED3A8800283252 /* ViewController.m */,
 				797BAA5F25ED3A8800283252 /* Main.storyboard */,
+				797BAA9125EDDDD700283252 /* AlienDraw.h */,
+				797BAA9225EDDDD700283252 /* AlienDraw.m */,
 				797BAA6225ED3A8A00283252 /* Assets.xcassets */,
 				797BAA6425ED3A8A00283252 /* LaunchScreen.storyboard */,
 				797BAA6725ED3A8A00283252 /* Info.plist */,
@@ -270,6 +275,7 @@
 				797BAA5825ED3A8800283252 /* AppDelegate.m in Sources */,
 				797BAA6925ED3A8A00283252 /* main.m in Sources */,
 				797BAA5B25ED3A8800283252 /* SceneDelegate.m in Sources */,
+				797BAA9325EDDDD700283252 /* AlienDraw.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
