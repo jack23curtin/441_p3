@@ -10,6 +10,8 @@
 @implementation AlienDraw
 
 @synthesize alien_x, alien_y;
+@synthesize bad_alien_x, bad_alien_y;
+
 @synthesize num_moves;
 
 
@@ -30,6 +32,15 @@
     
     [[UIColor whiteColor] setFill];
     CGContextFillEllipseInRect(context, CGRectMake(alien_x, alien_y, 20, 20));
+    
+    [[UIColor blueColor] setFill];
+    CGContextFillEllipseInRect(context, CGRectMake(bad_alien_x, bad_alien_y, 20, 20));
+    
+    if(num_moves > 0 && ((50 > fabsf(bad_alien_x - alien_x) || 50 > fabsf(alien_x - bad_alien_x)) && (50 > fabsf(bad_alien_y - alien_y) || 50 > fabsf(alien_y - bad_alien_y)))){
+        NSLog(@"HELLO");
+        [[UIColor blackColor] setFill];
+        CGContextFillRect(context, bounds);
+    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -39,6 +50,18 @@
         
         alien_x = p.x;
         alien_y = p.y;
+        
+        int lowerBound1 = 10;
+        int upperBound1 = 360;
+        int rndValue1 = lowerBound1 + arc4random() % (upperBound1 - lowerBound1);
+        
+        int lowerBound2 = 10;
+        int upperBound2 = 380;
+        int rndValue2 = lowerBound2 + arc4random() % (upperBound2 - lowerBound2);
+        
+        bad_alien_x = rndValue1;
+        bad_alien_y = rndValue2;
+        
         
         [self setNeedsDisplay];
         

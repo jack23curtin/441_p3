@@ -26,7 +26,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Eme-8s-Juv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Arw-Sb-KEf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Eme-8s-Juv" secondAttribute="bottom" id="ZSR-An-ZI4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Eme-8s-Juv" secondAttribute="bottom" id="Inb-hx-NWV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Eme-8s-Juv" secondAttribute="trailing" constant="20" id="fu4-tC-6sE"/>
                             <constraint firstItem="Eme-8s-Juv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iOT-Am-KKk"/>
                         </constraints>

@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AlienDraw : UIView
 @property (nonatomic) float alien_x, alien_y;
+@property (nonatomic) float bad_alien_x, bad_alien_y;
+
 @property (nonatomic) int num_moves;
 
 @end
