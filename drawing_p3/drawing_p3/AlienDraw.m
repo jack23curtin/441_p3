@@ -12,7 +12,17 @@
 @synthesize alien_x, alien_y;
 @synthesize bad_alien_x, bad_alien_y;
 
+@synthesize numScore;
+
+
 @synthesize num_moves;
+@synthesize FinalScore;
+
+
+@synthesize done;
+
+
+
 
 
 // Only override drawRect: if you perform custom drawing.
@@ -23,23 +33,53 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect bounds = [self bounds];
     
-    if(num_moves > 5)
-        [[UIColor purpleColor] setFill];
-
-    else
+    if(done > 0){
+        done = 0;
+        num_moves = 0;
+        [numScore setText: [NSString stringWithFormat:@"%i", num_moves * 3]];
+        [FinalScore setText: [NSString stringWithFormat:@"Score"]];
+        //[numScore setTextColor:[UIColor whiteColor]];
         [[UIColor redColor] setFill];
+
+    }else{
+        [[UIColor redColor] setFill];
+    }
+    
+    if(num_moves > 0){
+        [numScore setText: [NSString stringWithFormat:@"%i", num_moves * 3]];
+    }
     CGContextFillRect(context, bounds);
     
     [[UIColor whiteColor] setFill];
     CGContextFillEllipseInRect(context, CGRectMake(alien_x, alien_y, 20, 20));
     
     [[UIColor blueColor] setFill];
-    CGContextFillEllipseInRect(context, CGRectMake(bad_alien_x, bad_alien_y, 20, 20));
+    CGContextFillEllipseInRect(context, CGRectMake(bad_alien_x, bad_alien_y, num_moves * 3, num_moves * 3));
     
-    if(num_moves > 0 && ((50 > fabsf(bad_alien_x - alien_x) || 50 > fabsf(alien_x - bad_alien_x)) && (50 > fabsf(bad_alien_y - alien_y) || 50 > fabsf(alien_y - bad_alien_y)))){
+    int real_bx = bad_alien_x + (num_moves * 3)/2;
+    int real_by = bad_alien_y + (num_moves * 3)/2;
+    
+    int real_x = alien_x + 10;
+    int real_y = alien_y + 10;
+    
+    
+    
+    if(num_moves > 0 && (( (num_moves * 3) > abs(real_bx - real_x) || (num_moves * 3) > abs(real_x - real_bx)) && ( (num_moves * 3)  > abs(real_by - real_y) || (num_moves * 3) > abs(real_y - real_by)))){
         NSLog(@"HELLO");
         [[UIColor blackColor] setFill];
         CGContextFillRect(context, bounds);
+        
+        [[UIColor whiteColor] setFill];
+        CGContextFillEllipseInRect(context, CGRectMake(alien_x, alien_y, 20, 20));
+        
+        [[UIColor blueColor] setFill];
+        CGContextFillEllipseInRect(context, CGRectMake(bad_alien_x, bad_alien_y, num_moves * 3, num_moves * 3));
+        
+        //FINAL SCORE AND RESET
+        
+        [FinalScore setText: [NSString stringWithFormat:@"Final Score"]];
+        ++done;
+
     }
 }
 
@@ -56,7 +96,7 @@
         int rndValue1 = lowerBound1 + arc4random() % (upperBound1 - lowerBound1);
         
         int lowerBound2 = 10;
-        int upperBound2 = 380;
+        int upperBound2 = 800;
         int rndValue2 = lowerBound2 + arc4random() % (upperBound2 - lowerBound2);
         
         bad_alien_x = rndValue1;

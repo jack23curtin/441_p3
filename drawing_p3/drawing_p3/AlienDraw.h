@@ -14,6 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) float bad_alien_x, bad_alien_y;
 
 @property (nonatomic) int num_moves;
+@property (nonatomic) int done;
+
+@property (nonatomic, strong) IBOutlet UILabel *FinalScore;
+
+
+
+@property (nonatomic, strong) IBOutlet UILabel *numScore;
+
 
 @end
 
